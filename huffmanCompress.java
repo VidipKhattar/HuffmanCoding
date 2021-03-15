@@ -76,8 +76,18 @@ public class huffmanCompress {
 
     //main function to compress text file
     public static void main(String[] args) throws IOException, ClassNotFoundException {
+
         //Get the file to compress using huffmanCompress encoding
-        File inputFile = new File("Christmas_Carol_French.txt");
+        String inputFileName;
+
+        if (args.length == 0){
+            inputFileName = "christmas_carol_English.txt";
+        }
+        else {
+            inputFileName = args[0];
+        }
+
+        File inputFile = new File(inputFileName);
         //start time for a timer to check compression time
         long startTime = System.nanoTime();
         //Process the File to create a String object of the text file correctly formatted
