@@ -10,19 +10,28 @@ The program implements the Huffman coding algorithm, both encoding and decoding 
 ### Running the program
 ___
 
-The folder contains 2 java files, `huffmanCompress.java` and `huffmanDecompress.java`, the former compresses a chosen `.txt` file and the latter decompresses and binary file containg the compressed version of the inputted file.
+The project folder contains 2 java files, `huffmanCompress.java` and `huffmanDecompress.java` (along with thier class files), the former compresses a chosen `.txt` file and the latter decompresses and binary file containg the compressed version of the inputted file.
 
-Through an IDE or any text editor, the input file can be changed by replacing the File object source in line `80` (shown below) where it says `Christmas_Carol_French`, to any other `.txt` file in the same directory as the both the `.java` files
-```java
-78   public static void main(String[] args) throws IOException, ClassNotFoundException {
-79        //Get the file to compress using huffmanCompress encoding
-80        File inputFile = new File("Christmas_Carol_French.txt");
-``` 
+The program can be run through shell (recommended) or an IDE.
+The .class files for the .java files have already been created and have been put in the same directory as them.
 
-After the edits, the program can be run through the IDE or through a shell.
+Through a shell the program can be run by first navigating to the project folder and then typing the following:
+
+```sh
+java huffmanCompress
+```
+
+Since no text file have been put as an argument, the program will automatically select `Christmas_Carol_English.txt` which is already in the project folder.
+
+If you want to do compress your own file, first add the file to the project folder and type the following:
+
+```sh
+java huffmanCompress your_own_file_name.txt
+```
+
 Executing this will output the following the following format to the console:
 ```sh
-The File Christmas_Carol_French.txt successfully compressed to compressed_txt.bin
+The File Christmas_Carol_English.txt successfully compressed to compressed_txt.bin
 Size of uncompressed file is 222080 Bytes
 Size of compressed file is 123808 Bytes
 Compression ratio: 44.250720461095106%
@@ -69,14 +78,8 @@ dd skip=100256 count=253 if=input_text.txt of=output_text.txt bs=1
 ##### Authors
 - Vidip Khattar
 
-##### Acknowledgements
-- [GitHub](https://github.com/)
-
-
-
 For the latest version of this program code, [click here](https://github.com/VidipKhattar/HuffmanCoding.git) to access the GitHub repository with the latest updated code
 
 &copy; Vidip Khattar, University of Exeter
 
 Licensed under the [MIT License](License)
-
